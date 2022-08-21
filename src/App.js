@@ -4,7 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import Home from './pages/home';
 import Profile from './pages/profile';
 import Search from './pages/search';
-import Feed from './pages/feed';
+import Photos from './pages/Photos';
 import BottomNav from './components/layout/BottomNav';
 import PageWrapper from './components/layout/PageWrapper';
 import Header from './components/layout/Header';
@@ -20,7 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="profile" element={<Profile />} />
           <Route path="search" element={<Search />} />
-          <Route path="feed" element={<Feed />} />
+          <Route path="photos" element={<Photos />} />
         </Routes>
       </AnimatePresence>
       <BottomNav />

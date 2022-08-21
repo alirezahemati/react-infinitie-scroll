@@ -3,9 +3,9 @@ import { useInfiniteQuery } from 'react-query';
 import axios from 'axios';
 import AnimatedPage from '../components/layout/AnimatedPage';
 import { motion } from 'framer-motion';
-import LoaderSpinner from './../components/common/LoaderSpinner';
-import CardLoader from './../components/common/CardLoader';
-import FeedCard from '../components/feed/FeedCard';
+import LoaderSpinner from '../components/common/LoaderSpinner';
+import CardLoader from '../components/common/CardLoader';
+import PhotoCard from '../components/photos/PhotoCard';
 
 const fetchData = async ({ pageParam = 1 }) => {
   const response = await axios.get(
@@ -52,15 +52,17 @@ function Feed() {
         duration: 0.5,
       }}
     >
-      <div className="flex flex-col justify-center items-center p-10 max-w-md">
-        <h1 className="text-3xl text-violet-700 dark:text-white transition duration-500 font-bold capitalize mb-5">Feeds</h1>
+      <div className="flex flex-col justify-center items-center p-2 md:p-10 max-w-md">
+        <h1 className="text-3xl text-violet-700 dark:text-white transition duration-500 font-bold capitalize mb-5">
+          photos
+        </h1>
         <ul>
           {data &&
             data.pages.map((page) => {
               return page.data.map((item) => {
                 return (
                   <li key={item.id} className="mb-10">
-                    <FeedCard card={item} />
+                    <PhotoCard card={item} />
                   </li>
                 );
               });

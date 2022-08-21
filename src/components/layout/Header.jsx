@@ -11,8 +11,8 @@ const Header = () => {
     setTheme(colorTheme)
   }
   return (
-    <div className='flex justify-end bg-transparent p-4 fixed top-0 w-full h-14'>
-      <button className='flex justify-center items-center bg-gray-300 dark:bg-violet-900 transition duration-500 shadow rounded-full p-2 h-12 w-12' onClick={handleTheme}>
+    <div className='flex justify-end bg-transparent p-4 fixed top-0 w-full h-14' onClick={handleTheme}>
+      <button className='flex justify-center items-center bg-gray-300 dark:bg-violet-900 transition duration-500 shadow rounded-full p-2 h-12 w-12'>
         {
           colorTheme === 'dark' ? <IoMoon fontSize={20} color="black" /> : <BsFillSunFill fontSize={20} color="white" />
         }

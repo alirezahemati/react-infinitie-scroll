@@ -1,7 +1,7 @@
 import React from 'react'
 import CardLoader from '../common/CardLoader';
 
-const FeedCard = ({ card }) => {
+const PhotoCard = ({ card }) => {
   const { title, description, image } = card;
 
   const handleTextLength = (text) => {
@@ -25,4 +25,4 @@ const FeedCard = ({ card }) => {
   )
 }
 
-export default FeedCard
+export default PhotoCard

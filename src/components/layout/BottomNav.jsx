@@ -26,8 +26,8 @@ const BottomNav = () => {
         </Link>
       </div>
       <div>
-        <Link className='text-white font-bold' to="/feed">
-          {pathname == '/feed' ? <MdPhoto fontSize={28} /> : <MdOutlineInsertPhoto fontSize={28} />}
+        <Link className='text-white font-bold' to="/photos">
+          {pathname == '/photos' ? <MdPhoto fontSize={28} /> : <MdOutlineInsertPhoto fontSize={28} />}
         </Link>
       </div>
     </div>
