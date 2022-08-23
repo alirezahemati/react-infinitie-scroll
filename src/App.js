@@ -4,7 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import Home from './pages/home';
 import Profile from './pages/profile';
 import Search from './pages/search';
-import Photos from './pages/Photos';
+import Photos from './pages/photos';
 import BottomNav from './components/layout/BottomNav';
 import PageWrapper from './components/layout/PageWrapper';
 import Header from './components/layout/Header';

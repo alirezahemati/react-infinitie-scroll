@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import LoaderSpinner from '../components/common/LoaderSpinner';
 import CardLoader from '../components/common/CardLoader';
 import PhotoCard from '../components/photos/PhotoCard';
+import { PhotosList } from '../components/photos/PhotosList';
 
 const fetchData = async ({ pageParam = 1 }) => {
   const response = await axios.get(
@@ -14,7 +15,7 @@ const fetchData = async ({ pageParam = 1 }) => {
   return response.data.data;
 };
 
-function Feed() {
+function Photos() {
   const { data, hasNextPage, fetchNextPage, error, isFetchingNextPage } =
     useInfiniteQuery('feeds', fetchData, {
       getNextPageParam: (lastPage, pages) => {
@@ -56,18 +57,7 @@ function Feed() {
         <h1 className="text-3xl text-violet-700 dark:text-white transition duration-500 font-bold capitalize mb-5">
           photos
         </h1>
-        <ul>
-          {data &&
-            data.pages.map((page) => {
-              return page.data.map((item) => {
-                return (
-                  <li key={item.id} className="mb-10">
-                    <PhotoCard card={item} />
-                  </li>
-                );
-              });
-            })}
-        </ul>
+        {data && <PhotosList list={data.pages} />}
         {isFetchingNextPage && (
           <>
             <LoaderSpinner />
@@ -79,4 +69,4 @@ function Feed() {
   );
 }
 
-export default Feed;
+export default Photos;
